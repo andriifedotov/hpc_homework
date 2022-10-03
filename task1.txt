@@ -1,10 +1,20 @@
 1. What is the purpose of this code? What does the code compute to get it?
 
-   [...]
+   This code finds a solution to a real system of linear equations (A * X = B),
+   	- A is an NxN matrix
+   	- B is the right-hand side matrix
+   	- X is corresponding solution
+   	
+   The LU decomposition with partial pivoting and row interchanges is used to factor A as
+   A = P * L * U,
+   where P is a permutation matrix, L is unit lower triangular, and U is
+   upper triangular.  The factored form of A is then used to solve the
+   system of equations A * X = B.
 
 2. Briefly describe alternative mathematical methods to perform the same operation.
 
-   [...]
+   Doolittle’s method provides an alternative way to factor A into an LU decomposition without going through the Gaussian Elimination.
+For a general n×n matrix A, we assume that an LU decomposition exists, and write the form of L and U explicitly. We then systematically solve for the entries in L and U from the equations that result from the multiplications necessary for A=LU.
 
 3. What alternative(s) do you think is more demanding, from a computational point of view and in terms of memory consumption?
 
